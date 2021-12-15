@@ -2,7 +2,7 @@ FlowField JavaScript implementation. Generally built for use in screeps game.
 
 # Installation
 
-Copy `floeField.js` into your screeps branch directory.
+Copy `flowField.js` into your screeps branch directory.
 
 # Usage
 
