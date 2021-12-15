@@ -36,6 +36,7 @@ const costCallback = (x, y) => {
 	// or use value from terrain
 	// return terrainCost[terrain.get(x, y)];
 };
+const maxCost = 255;
 
 // run flowField generation (can run multiple times with different callbacks. data will be cleared before run)
 flowField.generate(
