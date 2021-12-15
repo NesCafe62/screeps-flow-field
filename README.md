@@ -63,7 +63,7 @@ Default: `false`
 
 Sets distance array type as Uint16Array (instead of Uint8Array). Can store distance up to 65535 instead of just 255. Use for potential large costs values or for large flowFields.
 
-```
+```js
 const flowField = new FlowField(50, 50, {uint16: true});
 
 // larger size flowField
@@ -76,7 +76,7 @@ Default: `false`
 
 Set to `true` if want to use directions (retreived via `getDirection(x, y)`). By default it's disabled.
 
-```
+```js
 const flowField = new FlowField(50, 50, {directions: true});
 flowField.generate(/* ... */);
 
