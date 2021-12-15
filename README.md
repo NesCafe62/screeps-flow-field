@@ -38,7 +38,7 @@ const costCallback = (x, y) => {
 };
 const maxCost = 255;
 
-// run flowField generation (can run multiple times with different callbacks. data will be cleared before run)
+// run flowField generation (can run multiple times with different callbacks and sources. data will be cleared before run)
 flowField.generate(
 	// array of sources
 	sources,
