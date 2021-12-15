@@ -11,7 +11,7 @@ const FlowField = require('flowField');
 // require('flowField'); - or just like that if you keep registered FlewField class as global
 
 // basic usage
-const flowField = new FlowField(50, 50);
+const flowField = new FlowField(50, 50, {directions: true});
 
 // define array of sources/targets (supports multiple sources)
 const sources = [
@@ -51,7 +51,7 @@ flowField.generate(
 	maxCost
 );
 
-const direction = getDirection(x, y); // get direction for any given coords
+const direction = getDirection(x, y); // get direction for any given coords (if directions option set to true)
 const distance = getDistance(x, y); // get distance for any given coords
 ```
 
