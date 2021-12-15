@@ -31,7 +31,7 @@ class FlowField {
 			: undefined;
 	}
 
-	get(x, y) {
+	getDistance(x, y) {
 		return this.data[y * this.width + x];
 	}
 
@@ -39,13 +39,14 @@ class FlowField {
 		return this.directions[y * this.width + x];
 	}
 
-	generate(sources, costCallback, maxCost) {
+	generate(sources, costCallback, maxCost = FLOWFIELD_MAX_COST) {
 		const width = this.width;
 		const height = this.height;
 
 		const directions = this.directions;
 		const data = this.data;
 
+		const distanceMaxCost = Math.min(maxCost, this.uint16 ? FLOWFIELD_MAX_COST : FLOWFIELD_MAX_COST_UINT8);
 		data.fill(this.uint16 ? FLOWFIELD_MAX_COST : FLOWFIELD_MAX_COST_UINT8);
 		if (directions) {
 			directions.fill(0);
@@ -83,7 +84,7 @@ class FlowField {
 						if (directions) {
 							directions[index] = direction;
 						}
-						if (distance <= maxCost) {
+						if (distance <= distanceMaxCost) {
 							queue.push(px, py, cost);
 						}
 					}
@@ -97,5 +98,5 @@ class FlowField {
 module.exports = FlowField;
 
 
-// comment this line to disable registering PathingManager globally
+// comment this line to disable registering FlowField class globally
 global.FlowField = FlowField;
