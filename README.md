@@ -51,8 +51,8 @@ flowField.generate(
 	maxCost
 );
 
-const direction = getDirection(x, y); // get direction for any given coords (if directions option set to true)
-const distance = getDistance(x, y); // get distance for any given coords
+const direction = flowField.getDirection(x, y); // get direction for any given coords (if directions option set to true)
+const distance = flowField.getDistance(x, y); // get distance for any given coords
 ```
 
 ## Options
@@ -80,7 +80,7 @@ Set to `true` if want to use directions (retreived via `getDirection(x, y)`). By
 const flowField = new FlowField(50, 50, {directions: true});
 flowField.generate(/* ... */);
 
-const direction = getDirection(x, y);
+const direction = flowField.getDirection(x, y);
 ```
 
 ## Visualize FlowFIeld
